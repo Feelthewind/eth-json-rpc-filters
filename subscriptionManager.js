@@ -21,6 +21,8 @@ function createSubscriptionMiddleware({ blockTracker, provider }) {
   const middleware = createScaffoldMiddleware({
     eth_subscribe: createAsyncMiddleware(subscribe),
     eth_unsubscribe: createAsyncMiddleware(unsubscribe),
+    klay_subscribe: createAsyncMiddleware(subscribe),
+    klay_unsubscribe: createAsyncMiddleware(unsubscribe),
   })
   middleware.destroy = destroy
   return { events, middleware }
